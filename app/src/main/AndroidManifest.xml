@@ -3,12 +3,14 @@
     package="com.example.androidtester">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".AndroidTester"
         android:theme="@style/Theme.AndroidTester">
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
