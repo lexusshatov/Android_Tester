@@ -12,4 +12,5 @@
     <color name="gray_light">#FF838391</color>
     <color name="gray_dark">#FF525464</color>
     <color name="hint">#FFB0B0C3</color>
+    <color name="background_light">#FFF7F7F7</color>
 </resources>
