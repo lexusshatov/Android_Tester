@@ -6,6 +6,7 @@ import androidx.fragment.app.commit
 import androidx.navigation.findNavController
 import com.example.androidtester.base.BaseActivity
 import com.example.androidtester.databinding.ActivitySecondBinding
+import com.example.androidtester.utils.showNotImplementedToast
 
 class SecondActivity : BaseActivity<ActivitySecondBinding>(ActivitySecondBinding::inflate) {
 
@@ -18,5 +19,7 @@ class SecondActivity : BaseActivity<ActivitySecondBinding>(ActivitySecondBinding
         supportFragmentManager.commit {
             replace(binding.container.id, FirstFragment())
         }
+
+        showNotImplementedToast()
     }
 }
