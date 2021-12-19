@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.NavController
 import androidx.viewbinding.ViewBinding
 
 abstract class BaseActivity<VB : ViewBinding>(
@@ -12,8 +13,8 @@ abstract class BaseActivity<VB : ViewBinding>(
 ) : AppCompatActivity() {
 
     val binding: VB by lazy { viewBindingProvider(layoutInflater) }
-
     open val toolbar: Toolbar? = null
+    open val navController: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,4 +32,8 @@ abstract class BaseActivity<VB : ViewBinding>(
         }
         return true
     }
+
+//    override fun onBackPressed() {
+//        navController?.navigateUp() ?: super.onBackPressed()
+//    }
 }
