@@ -28,12 +28,13 @@ abstract class BaseActivity<VB : ViewBinding>(
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            android.R.id.home -> onBackPressed()
+            android.R.id.home -> finish()
         }
         return true
     }
 
-//    override fun onBackPressed() {
-//        navController?.navigateUp() ?: super.onBackPressed()
-//    }
+    override fun onBackPressed() {
+        if (navController?.navigateUp() == true) return
+        super.onBackPressed()
+    }
 }

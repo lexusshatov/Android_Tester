@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTester">
         <activity
-            android:name=".ui.SecondActivity"
+            android:name=".ui.second.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
