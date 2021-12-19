@@ -48,6 +48,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 
     implementation("com.google.dagger:hilt-android:$hilt_version")
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
 
     implementation "androidx.core:core-ktx:1.7.0"
