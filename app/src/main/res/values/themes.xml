@@ -16,6 +16,8 @@
 
         <item name="materialButtonStyle">@style/Button</item>
         <item name="android:textViewStyle">@style/TextViewPrimary</item>
+        <item name="toolbarStyle">@style/Toolbar</item>
+        <item name="collapsingToolbarLayoutStyle">@style/CollapsingToolbar</item>
     </style>
 
     <style name="TextViewPrimary" parent="Widget.MaterialComponents.TextView">
@@ -42,6 +44,22 @@
     <style name="EditText" parent="Widget.AppCompat.EditText">
         <item name="backgroundTint">@color/background_light</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextAppearance">@style/toolbarTitleTextAppearance</item>
+        <item name="navigationIcon">@drawable/ic_back</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+
+    <style name="CollapsingToolbar" parent="Widget.Design.CollapsingToolbar">
+        <item name="collapsedTitleTextAppearance">@style/toolbarTitleTextAppearance</item>
+        <item name="expandedTitleTextAppearance">@style/toolbarTitleTextAppearance</item>
+    </style>
+
+    <style name="toolbarTitleTextAppearance">
+        <item name="fontFamily">@font/family_ubuntu_bold</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>
