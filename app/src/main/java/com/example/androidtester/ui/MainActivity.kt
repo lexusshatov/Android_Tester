@@ -1,23 +1,24 @@
-package com.example.androidtester
+package com.example.androidtester.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import androidx.appcompat.widget.Toolbar
+import com.example.androidtester.base.BaseActivity
 import com.example.androidtester.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private lateinit var binding: ActivityMainBinding
+    override val viewBindingProvider: (LayoutInflater) -> ActivityMainBinding = {
+        ActivityMainBinding.inflate(it)
+    }
+
+    override val toolbar: Toolbar? by lazy { binding.toolbar }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.button.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)

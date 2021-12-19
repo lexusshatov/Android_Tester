@@ -1,4 +1,4 @@
-package com.example.androidtester
+package com.example.androidtester.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
