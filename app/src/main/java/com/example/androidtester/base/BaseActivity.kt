@@ -2,13 +2,15 @@ package com.example.androidtester.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
+abstract class BaseActivity<VB : ViewBinding>(
+    private val viewBindingProvider: (LayoutInflater) -> VB,
+) : AppCompatActivity() {
 
-    abstract val viewBindingProvider: (LayoutInflater) -> VB
     val binding: VB by lazy { viewBindingProvider(layoutInflater) }
 
     open val toolbar: Toolbar? = null
@@ -19,8 +21,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
         toolbar?.let {
             setSupportActionBar(it)
-            val hasBackStack = supportFragmentManager.backStackEntryCount > 0
-            supportActionBar!!.setDisplayHomeAsUpEnabled(hasBackStack)
+            supportActionBar!!.setDisplayHomeAsUpEnabled(!isTaskRoot)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> onBackPressed()
+        }
+        return true
     }
 }

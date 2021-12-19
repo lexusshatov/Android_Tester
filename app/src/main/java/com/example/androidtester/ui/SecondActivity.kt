@@ -1,26 +1,10 @@
 package com.example.androidtester.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.view.MenuItem
+import androidx.appcompat.widget.Toolbar
+import com.example.androidtester.base.BaseActivity
 import com.example.androidtester.databinding.ActivitySecondBinding
 
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : BaseActivity<ActivitySecondBinding>(ActivitySecondBinding::inflate) {
 
-    private lateinit var binding: ActivitySecondBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivitySecondBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> onBackPressed()
-        }
-        return true
-    }
+    override val toolbar: Toolbar by lazy { binding.toolbar }
 }
