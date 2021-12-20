@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.androidtester.ui.home.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.example.androidtester.ui.second.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+
+    <fragment
+        tools:layout="@layout/fragment_settings"
+        android:id="@+id/settings"
+        android:name="com.example.androidtester.ui.settings.SettingsFragment"
+        android:label="SettingsFragment">
+        <action
+            android:id="@+id/action_settingsFragment_to_second_graph"
+            app:destination="@id/second_graph" />
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_test"
+        android:id="@+id/test"
+        android:name="com.example.androidtester.ui.test.TestFragment"
+        android:label="TestFragment">
+        <action
+            android:id="@+id/action_testFragment_to_second_graph3"
+            app:destination="@id/second_graph" />
+    </fragment>
+    <include app:graph="@navigation/second_graph" />
+</navigation>
