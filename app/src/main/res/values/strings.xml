@@ -3,4 +3,5 @@
     <string name="home">Главная</string>
     <string name="test">Тест</string>
     <string name="settings">Настройки</string>
+    <string name="click_again_to_leave">Нажмите ещё раз, чтобы выйти</string>
 </resources>
