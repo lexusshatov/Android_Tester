@@ -1,23 +1,19 @@
 package com.example.androidtester.ui.second
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.androidtester.base.BaseFragment
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.androidtester.R
 import com.example.androidtester.databinding.FragmentSecondBinding
 
-class SecondFragment : BaseFragment<FragmentSecondBinding>() {
+class SecondFragment : Fragment(R.layout.fragment_second) {
 
-    override val viewBindingProvider: (LayoutInflater, ViewGroup?) -> FragmentSecondBinding =
-        { inflater, container ->
-            FragmentSecondBinding.inflate(inflater, container, false)
-        }
+    private val binding by viewBinding<FragmentSecondBinding>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.back.setOnClickListener {
             findNavController().navigateUp()
         }

@@ -5,14 +5,18 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
+import com.example.androidtester.R
 import com.example.androidtester.base.BaseActivity
 import com.example.androidtester.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class MainActivity : BaseActivity(R.layout.activity_main) {
 
-    override val toolbar: Toolbar? by lazy { binding.toolbar }
+    private val binding by viewBinding<ActivityMainBinding>()
+
+    override val toolbar: Toolbar by lazy { binding.toolbar }
     override val navController: NavController
         get() = (supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment).navController
 
