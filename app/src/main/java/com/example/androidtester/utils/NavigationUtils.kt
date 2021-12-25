@@ -11,6 +11,7 @@ import java.lang.ref.WeakReference
 
 fun BottomNavigationView.setNavController(
     navController: NavController,
+    clearBackstackOnReselected: Boolean = false,
 ) {
     setOnItemSelectedListener { item ->
         NavigationUI.onNavDestinationSelected(
@@ -39,4 +40,8 @@ fun BottomNavigationView.setNavController(
                 }
             }
         })
+    if (clearBackstackOnReselected) setOnItemReselectedListener { item ->
+        val reselectedDestinationId = item.itemId
+        navController.popBackStack(reselectedDestinationId, inclusive = false)
+    }
 }

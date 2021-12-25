@@ -22,7 +22,7 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding.bottomNavigation.setNavController(navController)
+        binding.bottomNavigation.setNavController(navController, true)
     }
 
 }   
