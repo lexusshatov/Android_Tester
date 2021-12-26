@@ -26,6 +26,6 @@ class TestFragment : Fragment(R.layout.fragment_test) {
             "Это один и тот же компонент под разными названиями",
             "RecyclerView - устаревший компонент, вместо него лучше использовать ListView"
         )
-        adapter.submitList(answers)
+        adapter.submitAnswers(answers)
     }
 }
