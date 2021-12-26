@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:checkedIcon="@null"
     android:checkable="true"
     android:clickable="true"
     android:focusable="true"

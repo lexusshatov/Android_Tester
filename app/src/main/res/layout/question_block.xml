@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="10dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/secondary_pink"
         android:layout_margin="@dimen/base_padding"
         app:cardCornerRadius="@dimen/base_corner">
 
