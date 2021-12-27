@@ -4,8 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/layout"
-        layout="@layout/question_block" />
+    <!-- TODO page indicator -->
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/question_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
