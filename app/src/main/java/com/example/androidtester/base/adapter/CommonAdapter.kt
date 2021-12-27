@@ -9,9 +9,9 @@ import androidx.viewbinding.ViewBinding
 abstract class CommonAdapter<T, VB : ViewBinding> :
     ListAdapter<T, CommonAdapter<T, VB>.ViewHolder>(DefaultItemDiffCallback()) {
 
-    abstract val viewBindingProvider: (LayoutInflater, ViewGroup?) -> VB
+    protected abstract val viewBindingProvider: (LayoutInflater, ViewGroup?) -> VB
 
-    abstract fun bind(item: T, binding: VB)
+    protected abstract fun bind(item: T, binding: VB)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = viewBindingProvider(LayoutInflater.from(parent.context), parent)
