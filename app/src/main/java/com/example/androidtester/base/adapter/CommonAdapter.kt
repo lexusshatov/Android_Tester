@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
-abstract class CommonListAdapter<T, VB : ViewBinding> :
-    ListAdapter<T, CommonListAdapter<T, VB>.ViewHolder>(DefaultItemDiffCallback()) {
+abstract class CommonAdapter<T, VB : ViewBinding> :
+    ListAdapter<T, CommonAdapter<T, VB>.ViewHolder>(DefaultItemDiffCallback()) {
 
     abstract val viewBindingProvider: (LayoutInflater, ViewGroup?) -> VB
 
@@ -16,7 +16,7 @@ abstract class CommonListAdapter<T, VB : ViewBinding> :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = viewBindingProvider(LayoutInflater.from(parent.context), parent)
         return object : ViewHolder(binding) {
-            override fun bind(item: T) = this@CommonListAdapter.bind(item, binding)
+            override fun bind(item: T) = this@CommonAdapter.bind(item, binding)
         }
     }
 
