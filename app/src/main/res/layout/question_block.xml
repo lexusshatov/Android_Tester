@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/base_padding"
-        app:cardCornerRadius="@dimen/base_corner"
-        app:cardElevation="10dp"
-        app:strokeColor="@color/secondary_pink"
-        app:strokeWidth="1dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/question"
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/base_padding"
-            android:fontFamily="@font/family_gilroy_medium"
-            android:textSize="24sp"
-            tools:text="Для чего нужен RecyclerView? Какие схожести и различия с ListView? Преимущества RecyclerView перед ListView." />
+            app:cardCornerRadius="@dimen/base_corner"
+            app:cardElevation="10dp"
+            app:strokeColor="@color/secondary_pink"
+            app:strokeWidth="1dp">
 
-    </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/base_padding"
+                android:fontFamily="@font/family_gilroy_medium"
+                android:textSize="24sp"
+                tools:text="Для чего нужен RecyclerView? Какие схожести и различия с ListView? Преимущества RecyclerView перед ListView." />
 
-    <com.example.androidtester.base.NestedScrollableHost
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </com.google.android.material.card.MaterialCardView>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_answers"
             android:layout_width="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:orientation="vertical"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_answer" />
 
-    </com.example.androidtester.base.NestedScrollableHost>
+    </LinearLayout>
 
-
-
-</LinearLayout>
+</androidx.core.widget.NestedScrollView>
